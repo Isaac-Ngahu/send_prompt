@@ -4,10 +4,7 @@ from main import insert_token
 
 def send_payment_request(number,amount):
     try:
-        insert_token()
-        get_url = "https://payment-tracker.onrender.com/get_access_token"
-        response = requests.get(url=get_url)
-        token = response.json().get("accessToken")
+        token = insert_token()
         url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
         data = {
     "BusinessShortCode": 174379,
