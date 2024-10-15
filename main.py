@@ -21,7 +21,7 @@ def insert_token():
                 cursor.execute(sql,value)
                 connection.commit()
                 i = i+1
-                print("inserted")
+                return response.json().get('access_token')
             else:
                 print("no access token")
         except Exception as e:
